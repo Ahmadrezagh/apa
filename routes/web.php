@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/','Front\IndexController');
+
+Route::resource('type.posts','Front\TypePostController');
+Route::get('tag/{tag}','Front\TagController@show')->name('tag');
 Auth::routes();
 // Admin Part
 Route::middleware(['auth'])->group(function () {

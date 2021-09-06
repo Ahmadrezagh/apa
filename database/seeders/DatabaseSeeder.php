@@ -18,7 +18,12 @@ class DatabaseSeeder extends Seeder
             SettingSeeder::class,
             UserSeeder::class,
             UserTypeSeeder::class,
-            PermissionSeeder::class
+            PermissionSeeder::class,
+            CategorySeeder::class,
+            PostTypeSeeder::class,
+            TagSeeder::class,
+            PostSeeder::class,
+
         ]);
     }
 }
