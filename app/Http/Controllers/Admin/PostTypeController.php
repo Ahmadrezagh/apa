@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Http\Requests\Admin\PostType\StorePostTypeRequest;
+use App\Http\Requests\Admin\PostType\UpdatePostTypeRequest;
 use App\Models\PostType;
-use App\Models\Tag;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class PostTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,16 +17,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $slides = Post::query()->latest()->take(4)->get();
-        $latest_news = Post::query()->latest()->take(4)->get();
-        $favorite_posts = Post::query()->orderBy('view','DESC')->take(4)->get();
-        $most_view =  Post::query()->latest()->take(4)->get();
-        $bestOfWeek = Post::query()->latest()->take(4)->get();
-        $sponsers = Post::query()->latest()->take(4)->get();
-        $most_comment = Post::query()->latest()->take(4)->get();
-        $randomItem = PostType::query()->inRandomOrder()->first();
-        $tags = Tag::query()->inRandomOrder()->take(10)->get();
-        return view('front.index',compact('slides','latest_news','favorite_posts','most_view','bestOfWeek','sponsers','most_comment','randomItem','tags'));
+        $types = PostType::query()->get();
+        return view('admin.types.index',compact('types'));
     }
 
     /**
@@ -45,9 +37,11 @@ class IndexController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostTypeRequest $request)
     {
-        //
+        PostType::create($request->validated());
+        alert()->success('نوع مقاله با موفقیت افزوده شد');
+        return back();
     }
 
     /**
@@ -79,9 +73,11 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePostTypeRequest $request, PostType $type)
     {
-        //
+        $type->update($request->validated());
+        alert()->success('نوع مقاله با موفقیت ویرایش شد');
+        return back();
     }
 
     /**
@@ -90,8 +86,10 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(PostType $type)
     {
-        //
+        $type->delete();
+        alert()->success('نوع مقاله با موفقیت حذف شد');
+        return back();
     }
 }

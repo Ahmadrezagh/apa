@@ -5,28 +5,21 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\PostType;
-use App\Models\Tag;
 use Illuminate\Http\Request;
 
-class IndexController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $slides = Post::query()->latest()->take(4)->get();
-        $latest_news = Post::query()->latest()->take(4)->get();
-        $favorite_posts = Post::query()->orderBy('view','DESC')->take(4)->get();
-        $most_view =  Post::query()->latest()->take(4)->get();
-        $bestOfWeek = Post::query()->latest()->take(4)->get();
-        $sponsers = Post::query()->latest()->take(4)->get();
-        $most_comment = Post::query()->latest()->take(4)->get();
+        $key = $request->q ?? null;
+        $posts = Post::query()->search($key)->latest()->paginate()->withPath(url()->full());;
         $randomItem = PostType::query()->inRandomOrder()->first();
-        $tags = Tag::query()->inRandomOrder()->take(10)->get();
-        return view('front.index',compact('slides','latest_news','favorite_posts','most_view','bestOfWeek','sponsers','most_comment','randomItem','tags'));
+        return view('front.posts.index',compact('posts','key','randomItem'));
     }
 
     /**

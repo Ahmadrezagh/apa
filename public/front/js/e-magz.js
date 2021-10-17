@@ -114,90 +114,90 @@ $(function () {
 		});
 	}
 
-
-	// newsletter
-	var newsletter = function () {
-		$(".newsletter").submit(function () {
-			var $this = $(this),
-				newsletter = {
-					start: function () {
-						$this.find(".icon").addClass("spin");
-						$this.find(".icon i").removeClass("ion-ios-email-outline");
-						$this.find(".icon i").addClass("ion-load-b");
-						$this.find(".icon h1").html("لطفا کمی صبر کنید ...");
-						$this.find(".btn").attr("disabled", true);
-						$this.find(".email").attr("disabled", true);
-					},
-					end: function () {
-						$this.find(".icon").removeClass("spin");
-						$this.find(".icon").addClass("success");
-						$this.find(".icon i").addClass("ion-checkmark");
-						$this.find(".icon i").removeClass("ion-load-b");
-						$this.find(".icon h1").html("ثبت موفق، با تشکر!");
-						$this.find(".email").val("");
-						$this.find(".btn").attr("disabled", false);
-						$this.find(".email").attr("disabled", false);
-						$.toast({
-							text: "تبریک، با موفقیت در خبرنامه ثبت نام کردید.",
-							position: 'bottom-right',
-							bgcolor: '#E01A31',
-							icon: 'success',
-							heading: 'خبرنامه',
-							loader: false
-						});
-					},
-					error: function () {
-						$this.find(".icon").removeClass("spin");
-						$this.find(".icon").addClass("error");
-						$this.find(".icon i").addClass("ion-ios-close-outline");
-						$this.find(".icon i").removeClass("ion-load-b");
-						$this.find(".icon h1").html("خطا! دوباره سعی کنید");
-						$this.find(".btn").attr("disabled", false);
-						$this.find(".email").attr("disabled", false);
-						$.toast({
-							text: "خطایی رخ داده است، لطفا کمی بعد دوباره تلاش کنید!",
-							position: 'bottom-right',
-							icon: 'error',
-							heading: 'خبرنامه',
-							loader: false
-						});
-					}
-				}
-
-			if ($this.find(".email").val().trim().length < 1) {
-				$this.find(".email").focus();
-			} else {
-				/* 
-				 * Add your ajax code
-				 * ------------------
-				 * For example:
-				 * $.ajax({
-				 * 		url: "subscribe_url",
-				 * 		type: "post",
-				 *  	data: $this.serialize(),
-				 * 		error: function() {
-				 * 			newsletter.error();
-				 * 		},	
-				 * 		beforeSend: function() {
-				 * 			newsletter.start();
-				 * 		},	
-				 * 		success: function() {
-				 * 			newsletter.end();
-				 * 		}
-				 * });
-				 });
-				*/
-
-				newsletter.start();
-
-				setTimeout(function () {
-					newsletter.end();
-				}, 2000);
-			}
-
-			return false;
-		});
-	}
+	//
+	// // newsletter
+	// var newsletter = function () {
+	// 	$(".newsletter").submit(function () {
+	// 		var $this = $(this),
+	// 			newsletter = {
+	// 				start: function () {
+	// 					$this.find(".icon").addClass("spin");
+	// 					$this.find(".icon i").removeClass("ion-ios-email-outline");
+	// 					$this.find(".icon i").addClass("ion-load-b");
+	// 					$this.find(".icon h1").html("لطفا کمی صبر کنید ...");
+	// 					$this.find(".btn").attr("disabled", true);
+	// 					$this.find(".email").attr("disabled", true);
+	// 				},
+	// 				end: function () {
+	// 					$this.find(".icon").removeClass("spin");
+	// 					$this.find(".icon").addClass("success");
+	// 					$this.find(".icon i").addClass("ion-checkmark");
+	// 					$this.find(".icon i").removeClass("ion-load-b");
+	// 					$this.find(".icon h1").html("ثبت موفق، با تشکر!");
+	// 					$this.find(".email").val("");
+	// 					$this.find(".btn").attr("disabled", false);
+	// 					$this.find(".email").attr("disabled", false);
+	// 					$.toast({
+	// 						text: "تبریک، با موفقیت در خبرنامه ثبت نام کردید.",
+	// 						position: 'bottom-right',
+	// 						bgcolor: '#E01A31',
+	// 						icon: 'success',
+	// 						heading: 'خبرنامه',
+	// 						loader: false
+	// 					});
+	// 				},
+	// 				error: function () {
+	// 					$this.find(".icon").removeClass("spin");
+	// 					$this.find(".icon").addClass("error");
+	// 					$this.find(".icon i").addClass("ion-ios-close-outline");
+	// 					$this.find(".icon i").removeClass("ion-load-b");
+	// 					$this.find(".icon h1").html("خطا! دوباره سعی کنید");
+	// 					$this.find(".btn").attr("disabled", false);
+	// 					$this.find(".email").attr("disabled", false);
+	// 					$.toast({
+	// 						text: "خطایی رخ داده است، لطفا کمی بعد دوباره تلاش کنید!",
+	// 						position: 'bottom-right',
+	// 						icon: 'error',
+	// 						heading: 'خبرنامه',
+	// 						loader: false
+	// 					});
+	// 				}
+	// 			}
+	//
+	// 		if ($this.find(".email").val().trim().length < 1) {
+	// 			$this.find(".email").focus();
+	// 		} else {
+	// 			/*
+	// 			 * Add your ajax code
+	// 			 * ------------------
+	// 			 * For example:
+	// 			 * $.ajax({
+	// 			 * 		url: "subscribe_url",
+	// 			 * 		type: "post",
+	// 			 *  	data: $this.serialize(),
+	// 			 * 		error: function() {
+	// 			 * 			newsletter.error();
+	// 			 * 		},
+	// 			 * 		beforeSend: function() {
+	// 			 * 			newsletter.start();
+	// 			 * 		},
+	// 			 * 		success: function() {
+	// 			 * 			newsletter.end();
+	// 			 * 		}
+	// 			 * });
+	// 			 });
+	// 			*/
+	//
+	// 			newsletter.start();
+	//
+	// 			setTimeout(function () {
+	// 				newsletter.end();
+	// 			}, 2000);
+	// 		}
+	//
+	// 		return false;
+	// 	});
+	// }
 
 	var featuredImage = function () {
 		$("#featured figure img").each(function () {

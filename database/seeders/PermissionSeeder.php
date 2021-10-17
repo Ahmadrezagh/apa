@@ -31,6 +31,18 @@ class PermissionSeeder extends Seeder
             [
                 'Setting',
                 'تنظیمات'
+            ],
+            [
+                'Tags',
+                'تگ ها'
+            ],
+            [
+                'Types',
+                'نوع پست ها'
+            ],
+            [
+                'Posts',
+                ' پست ها'
             ]
         ];
         foreach ($permissions as $permission)

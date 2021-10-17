@@ -32,7 +32,7 @@
                                 </div>
                                 <h1 class="pt-0"><a href="{{route('type.posts.show',[$post->type->slug,$post->slug])}}">{{$post->title}}</a></h1>
                                 <p>
-                                    {{\Illuminate\Support\Str::limit($post->text,100)}}
+                                    {!! \Illuminate\Support\Str::limit($post->text,100) !!}
                                 </p>
                                 <footer class="mt-2">
                                     <a class="btn btn-primary more" href="{{route('type.posts.show',[$post->type->slug,$post->slug])}}">
@@ -71,8 +71,7 @@
                                     <h1><a href="{{route('type.posts.show',[$randomItem->slug,$randomItem->posts()->latest()->first()->slug])}}">{{$randomItem->posts()->latest()->first()->title}}</a>
                                     </h1>
                                     <p>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                        تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.
+                                        {!! \Illuminate\Support\Str::limit($randomItem->posts()->latest()->first()->text,100) !!}
                                     </p>
                                     <div class="detail">
                                         <div class="time">{{$randomItem->posts()->latest()->first()->date}}</div>
@@ -105,13 +104,14 @@
                 </aside>
                 <aside>
                     <div class="aside-body">
-                        <form class="newsletter">
+                        <form class="newsletter" action="{{route('newsLetter')}}" method="post">
+                            @csrf
                             <div class="icon">
                                 <i class="ion-ios-email-outline"></i>
                                 <h1 class="text-center">خبرنامه</h1>
                             </div>
                             <div class="input-group">
-                                <input type="email" class="form-control email" placeholder="ایمیل شما">
+                                <input name="email" type="email" class="form-control email" placeholder="ایمیل شما">
                                 <div class="input-group-btn">
                                     <button class="btn btn-primary"><i class="ion-paper-airplane mr-0"></i></button>
                                 </div>

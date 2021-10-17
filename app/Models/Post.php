@@ -46,4 +46,30 @@ class Post extends Model
     {
         return route('type.posts.show',[$this->type->slug,$this->slug]);
     }
+
+    public function similarCategories($category_id)
+    {
+        return $this->whereHas('categories',function ($query) use ($category_id) {
+            return $query->where('category_id','=',$category_id);
+        });
+    }
+    public function similarItems()
+    {
+        $similar_items = collect();
+        $category = $this->categories()->first();
+        if($category)
+        {
+            $similar_items = $this->similarCategories($category->id)->where('id','!=',$this->id)->take(2)->get();
+        }
+       return $similar_items;
+    }
+
+    public function scopeSearch($query,$key = null)
+    {
+        if($key)
+        {
+            return $query->where('title','like','%'.$key.'%')->orwhere('text','like','%'.$key.'%');
+        }
+        return $query;
+    }
 }

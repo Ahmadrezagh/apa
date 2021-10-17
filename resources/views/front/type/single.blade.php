@@ -22,7 +22,7 @@
                         <div class="main">
                             <div class="featured mb-5">
                                 <figure>
-                                    <img src="{{url($post->image)}}">
+                                   @if($post->image) <img src="{{url($post->image)}}"> @endif
                                 </figure>
                             </div>
                             <div class="text-right">
@@ -49,33 +49,33 @@
                         <div class="title"><i class="ion-android-share-alt"></i> به اشتراک گذاری این خبر</div>
                         <ul class="social">
                             <li>
-                                <a href="#" class="facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=#{{$post->link}}" target="_blank" class="facebook">
                                     <i class="ion-social-facebook"></i> Facebook
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="twitter">
+                                <a href="https://twitter.com/intent/tweet?url={{$post->link}}" target="_blank" class="twitter">
                                     <i class="ion-social-twitter"></i> Twitter
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="googleplus">
+                                <a href="https://plus.google.com/share?url={{$post->link}}" class="googleplus">
                                     <i class="ion-social-googleplus"></i> Google+
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="linkedin">
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url={{$post->link}}&title={{$post->title}}" class="linkedin">
                                     <i class="ion-social-linkedin"></i> Linkedin
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="skype">
+                                <a href="mailto:?subject={{$post->title}}&amp;body=Check out this site {{$post->link}}" class="skype">
                                     <i class="ion-ios-email-outline"></i> Email
                                 </a>
                             </li>
                             <li class="count">
-                                ۲۰
-                                <div>اشتراک گذاری</div>
+{{--                                ۲۰--}}
+{{--                                <div>اشتراک گذاری</div>--}}
                             </li>
                         </ul>
                     </div>
@@ -85,38 +85,24 @@
                     </div>
 
                     <div class="row">
+                        @foreach($post->similarItems() as $item)
                         <article class="article related col-md-6 col-sm-6 col-xs-12">
                             <div class="inner">
                                 <figure>
-                                    <a href="#">
-                                        <img src="images/news/img03.jpg">
+                                    <a href="{{$item->link}}">
+                                        <img src="{{url($item->image)}}">
                                     </a>
                                 </figure>
                                 <div class="padding">
-                                    <h2><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</a></h2>
+                                    <h2><a href="{{url($item->image)}}">{{$item->title}}</a></h2>
                                     <div class="detail text-right mt-4">
-                                        <div class="category"><a href="category.html">اقتصادی</a></div>
-                                        <div class="time"><i class="fa fa-clock"></i> اسفند ۹۸</div>
+                                        <div class="category"><a href="{{$item->type->link}}">{{$item->type->name}}</a></div>
+                                        <div class="time"><i class="fa fa-clock"></i> {{$item->date}} </div>
                                     </div>
                                 </div>
                             </div>
                         </article>
-                        <article class="article related col-md-6 col-sm-6 col-xs-12">
-                            <div class="inner">
-                                <figure>
-                                    <a href="#">
-                                        <img src="images/news/img08.jpg">
-                                    </a>
-                                </figure>
-                                <div class="padding">
-                                    <h2><a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</a></h2>
-                                    <div class="detail text-right mt-4">
-                                        <div class="category"><a href="category.html">اقتصادی</a></div>
-                                        <div class="time"><i class="fa fa-clock"></i> اسفند ۹۸</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                        @endforeach
                     </div>
 
                 </div>

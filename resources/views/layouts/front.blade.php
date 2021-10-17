@@ -32,6 +32,11 @@
     <link rel="stylesheet" href="{{url('/front/css/style.css')}}">
     <link rel="stylesheet" href="{{url('/front/css/skins/all.css')}}">
     <link rel="stylesheet" href="{{url('/front/css/demo.css')}}">
+    @toastr_css
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
 </head>
 
 <body class="skin-orange">
@@ -49,14 +54,14 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
-                    <form class="search" autocomplete="off">
+                    <form class="search" action="{{route('posts')}}" autocomplete="off">
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" name="q" class="form-control"
+                                <input type="text" name="q" value="{{request('q')}}" class="form-control"
                                        placeholder="جستجوی عبارت مورد نظر ...">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-primary">
-                                        <a class="ion-search text-white" href="search.html"></a>
+                                    <button class="btn btn-primary" type="submit">
+                                        <a class="ion-search text-white" ></a>
                                     </button>
                                 </div>
                             </div>
@@ -98,6 +103,15 @@
                     <li class="for-tablet"><a href="{{route('login')}}">ورود</a></li>
                     <li class="for-tablet"><a href="{{route('register')}}">ثبت نام</a></li>
                     <li><a href="{{url('/')}}">خانه</a></li>
+
+                    <li class="dropdown magz-dropdown">
+                        <a href="#">دسته بندی ها <i class="ion-ios-arrow-left"></i></a>
+                        <ul class="dropdown-menu">
+                            @foreach(\App\Models\Category::all() as $category)
+                            <li><a href="{{route('category',$category->slug)}}">{{$category->name}}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
                     @foreach(\App\Models\PostType::all() as $item)
                     <li class="dropdown magz-dropdown magz-dropdown-megamenu">
                         <a href="#">{{$item->name}} <i
@@ -202,14 +216,15 @@
                     <h1 class="block-title">خبرنامه</h1>
                     <div class="block-body">
                         <p>برای دریافت آخرین اخبار ایمیل خود را وارد کنید</p>
-                        <form class="newsletter">
+                        <form class="newsletter" action="{{route('newsLetter')}}" method="POST">
+                            @csrf
                             <div class="input-group">
                                 <div class="input-group-addon">
                                     <i class="ion-ios-email-outline"></i>
                                 </div>
-                                <input type="email" class="form-control email" placeholder="ایمیل شما">
+                                <input type="email" name="email" class="form-control email" placeholder="ایمیل شما">
                             </div>
-                            <button class="btn btn-primary btn-block white">ثبت ایمیل</button>
+                            <button type="submit" class="btn btn-primary btn-block white">ثبت ایمیل</button>
                         </form>
                     </div>
                 </div>
@@ -321,7 +336,7 @@
                 <div class="block">
                     <div class="block-body no-margin">
                         <ul class="footer-nav-horizontal">
-                            <li><a href="index5.html">خانه</a></li>
+                            <li><a href="{{url('/')}}">خانه</a></li>
                             <li><a href="contact.html">تماس با ما</a></li>
                             <li><a href="about.html">در باره ما</a></li>
                         </ul>
@@ -341,6 +356,9 @@
 <!-- End Footer -->
 
 <!-- JS -->
+@jquery
+@toastr_js
+@toastr_render
 <script src="{{url('/front/js/jquery.js')}}"></script>
 <script src="{{url('/front/js/jquery.migrate.js')}}"></script>
 <script src="{{url('/front/scripts/bootstrap/bootstrap.min.js')}}"></script>
@@ -355,6 +373,7 @@
 <script src="{{url('/front/scripts/toast/jquery.toast.min.js')}}"></script>
 {{--<script src="{{url('/front/js/demo.js')}}"></script>--}}
 <script src="{{url('/front/js/e-magz.js')}}"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 </body>
 
 </html>

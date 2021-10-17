@@ -7,10 +7,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ol class="breadcrumb">
-                            <li><a href="{{url('/')}}">خانه</a></li>
-                            <li class="active">{{$type->name}}</li>
+                            <li><a href="{{url('/')}}">جستجو</a></li>
+                            <li class="active">{{$key}}</li>
                         </ol>
-                        <h1 class="page-title mt-3">{{$type->name}}</h1>
+                        <h1 class="page-title mt-3">{{$key}}</h1>
                     </div>
                 </div>
                 <div class="line mt-1"></div>

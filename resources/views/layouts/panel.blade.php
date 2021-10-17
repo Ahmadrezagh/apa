@@ -40,6 +40,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Toastr css -->
     @toastr_css
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body style="font-family: IranYekan" class="hold-transition sidebar-mini layout-fixed">
 @include('sweet::alert')
@@ -211,10 +212,29 @@
                                             </ul>
                                         </li>
                                         @endif
+                                        @if ((Auth::user()->isAdmin() && Auth::user()->can('Posts')) || Auth::user()->isSuperAdmin() )
+                                            <li class="nav-item has-treeview ">
+                                                <a href="#" class="nav-link @yield('Post')">
+                                                    <i class="fas fa-clipboard-list"></i>
+                                                    <p>
+                                                        پست ها
+                                                        <i class="right fas fa-angle-left"></i>
+                                                    </p>
+                                                </a>
+                                                <ul class="nav nav-treeview">
+                                                    <li class="nav-item">
+                                                        <a href="{{route('posts.index')}}" class="nav-link @yield('Posts')">
+                                                            <p>لیست پست ها</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        @endif
+
                                         @if ((Auth::user()->isAdmin() && Auth::user()->can('Categories')) || Auth::user()->isSuperAdmin() )
                                             <li class="nav-item has-treeview ">
                                                 <a href="#" class="nav-link @yield('Categories')">
-                                                    <i class="fas fa-clipboard-list"></i>
+                                                    <i class="fas fa-paperclip"></i>
                                                     <p>
                                                         دسته بندی ها
                                                         <i class="right fas fa-angle-left"></i>
@@ -229,6 +249,44 @@
                                                 </ul>
                                             </li>
                                         @endif
+                                        @if ((Auth::user()->isAdmin() && Auth::user()->can('Tagsُ')) || Auth::user()->isSuperAdmin() )
+                                            <li class="nav-item has-treeview ">
+                                                <a href="#" class="nav-link @yield('Tag')">
+                                                    <i class="fas fa-tags"></i>
+                                                    <p>
+                                                        تگ ها
+                                                        <i class="right fas fa-angle-left"></i>
+                                                    </p>
+                                                </a>
+                                                <ul class="nav nav-treeview">
+                                                    <li class="nav-item">
+                                                        <a href="{{route('tags.index')}}" class="nav-link @yield('Tags')">
+                                                            <p>لیست تگ ها</p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        @endif
+
+                                        @if ((Auth::user()->isAdmin() && Auth::user()->can('Types')) || Auth::user()->isSuperAdmin() )
+                                            <li class="nav-item has-treeview ">
+                                                <a href="#" class="nav-link @yield('Type')">
+                                                    <i class="fas fa-clipboard-list"></i>
+                                                    <p>
+                                                        نوع مقالات
+                                                        <i class="right fas fa-angle-left"></i>
+                                                    </p>
+                                                </a>
+                                                <ul class="nav nav-treeview">
+                                                    <li class="nav-item">
+                                                        <a href="{{route('types.index')}}" class="nav-link @yield('Types')">
+                                                            <p>لیست انواع مقالات </p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        @endif
+
                                         @if ((Auth::user()->isAdmin() && Auth::user()->can('User')) || Auth::user()->isSuperAdmin() )
                                             <li class="nav-item has-treeview ">
                                                 <a href="#" class="nav-link @yield('User')">
@@ -371,13 +429,14 @@
     <script>
         toastr.error('{{$error}}')
     </script>
-    <script>
 
-        $(document).ready(function() {
-            $('.js-example-basic-single').select2();
-        });
-    </script>
 @endforeach
+<script>
+    $(document).ready(function() {
+        $('.js-example-basic-multiple').select2();
+    });
+
+</script>
 @yield('js')
 
 </body>

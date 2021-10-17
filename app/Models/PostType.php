@@ -25,4 +25,9 @@ class PostType extends Model
     {
         return $this->hasMany(Post::class);
     }
+
+    public function getLinkAttribute()
+    {
+        return route('type.posts.index',$this->slug);
+    }
 }

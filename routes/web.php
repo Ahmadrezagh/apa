@@ -17,6 +17,9 @@ Route::resource('/','Front\IndexController');
 
 Route::resource('type.posts','Front\TypePostController');
 Route::get('tag/{tag}','Front\TagController@show')->name('tag');
+Route::get('category/{category}','Front\CategoryController@show')->name('category');
+Route::get('posts','Front\PostController@index')->name('posts');
+Route::post('newsLetter','Front\NewsLetterController@newsLetter')->name('newsLetter');
 Auth::routes();
 // Admin Part
 Route::middleware(['auth'])->group(function () {
@@ -25,6 +28,9 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('admin', 'Admin\AdminController');
         Route::resource('roles', 'Admin\RoleController');
         Route::resource('categories', 'Admin\CategoryController');
+        Route::resource('tags', 'Admin\TagController');
+        Route::resource('types', 'Admin\PostTypeController');
+        Route::resource('posts', 'Admin\PostController');
         Route::resource('users', 'Admin\UserController');
         Route::resource('settings', 'Admin\SettingController');
 

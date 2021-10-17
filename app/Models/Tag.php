@@ -18,4 +18,14 @@ class Tag extends Model
     {
         return $this->belongsToMany(Post::class);
     }
+
+    public function getCountAttribute()
+    {
+        return $this->posts()->count();
+    }
+
+    public function getLinkAttribute()
+    {
+        return route('tag',$this->name);
+    }
 }
