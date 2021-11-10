@@ -168,8 +168,6 @@
                         </div>
                     </li>
                     @endforeach
-                    <li><a href="{{route('about_us')}}">درباره ما</a></li>
-                    <li><a href="{{route('contact_us')}}">تماس با ما</a></li>
 
                 </ul>
             </div>
