@@ -48,7 +48,7 @@
                     <div class="brand">
                         <a href="{{url('/')}}">
                             <img src="{{url(setting('logo'))}}" alt="{{setting('name')}}" style="
-    max-width: 42px;
+    max-width: 85px;
 ">
                         </a>
                     </div>

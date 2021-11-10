@@ -355,7 +355,7 @@
            طراحی و توسعه : <a href="https://ahmadrezaghanbari.ir">احمدرضا قنبری</a>
         </div>
         <!-- Default to the left -->
-        <strong>  تمامی حقوق مادی و معنوی برای وبسایت <a href="{{setting('url')}}">{{setting('name')}}</a> محفوض است </strong>
+        <strong>  تمامی حقوق مادی و معنوی برای وبسایت <a href="{{setting('url')}}">{{setting('name')}}</a> محفوظ است </strong>
     </footer>
 
     <!-- Control Sidebar -->
