@@ -8,10 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="قالب خبری Magz">
     <meta name="author" content="Kodinger">
-    <meta name="keyword" content="قالب خبری، قالب اچ تی ام ال، قالب خبری مگز">
+    <meta name="keyword" content="مرکز آپا بوشهر">
     <!-- Shareable -->
-    <meta property="og:title" content="قالب خبری Magz" />
-    <meta property="og:type" content="article" />
+    <meta property="og:title" content="مرکز آپا بوشهر" />
     <title>{{setting('name')}}</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{url('/front/scripts/bootstrap/bootstrap.min.css')}}">
