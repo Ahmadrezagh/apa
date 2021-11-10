@@ -39,7 +39,7 @@ class Install extends Command
      */
     public function handle()
     {
-        Artisan::call('migrate');
-        Artisan::call('db:seed');
+//        Artisan::call('migrate');
+//        Artisan::call('db:seed');
     }
 }

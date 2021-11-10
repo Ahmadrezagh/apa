@@ -38,7 +38,7 @@ class Reset extends Command
      */
     public function handle()
     {
-        Artisan::call('migrate:fresh');
-        Artisan::call('db:seed');
+//        Artisan::call('migrate:fresh');
+//        Artisan::call('db:seed');
     }
 }

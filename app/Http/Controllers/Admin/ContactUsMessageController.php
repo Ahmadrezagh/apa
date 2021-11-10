@@ -3,22 +3,24 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\ContactUsMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CategoryController extends Controller
+class ContactUsMessageController extends Controller
 {
     public function __construct()
     {
+
         $this->middleware(function ($request, $next) {
-            if ((Auth::user()->isAdmin() && Auth::user()->can('Contact_us')) || Auth::user()->isSuperAdmin())
+            if ((Auth::user()->isAdmin() && Auth::user()->can('Category')) || Auth::user()->isSuperAdmin())
             {
                 return $next($request);
             }else{
                 abort(404);
             }
         });
+
     }
     /**
      * Display a listing of the resource.
@@ -27,8 +29,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('admin.categories.index',compact('categories'));
+        $contact_us_messages = ContactUsMessage::query()->latest()->get();
+        return view('admin.contact_us.index',compact('contact_us_messages'));
     }
 
     /**
@@ -49,15 +51,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
-        Category::create([
-            'name' => $request->name,
-            'parent_id' => ($request->parent_id > 0) ? $request->parent_id : null,
-        ]);
-        alert()->success('دسته بندی با موفقیت ایجاد شد');
-        return back();
+        //
     }
 
     /**
@@ -91,15 +85,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
-        Category::where('id','=',$id)->update([
-            'name' => $request->name,
-            'parent_id' => ($request->parent_id > 0) ? $request->parent_id : null
-        ]);
-        alert()->success('دسته بندی با موفقیت ویرایش شد');
-        return back();
+        //
     }
 
     /**
@@ -110,8 +96,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        Category::findOrfail($id)->delete();
-        alert()->success('دسته بندی با موفقیت حذف شد');
+        $message = ContactUsMessage::findOrFail($id);
+        $message->delete();
+        alert()->success('پیام با موفقیت حذف شد');
         return back();
     }
 }

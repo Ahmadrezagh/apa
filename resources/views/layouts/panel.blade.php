@@ -249,6 +249,24 @@
                                                 </ul>
                                             </li>
                                         @endif
+                                        @if ((Auth::user()->isAdmin() && Auth::user()->can('Contact_us')) || Auth::user()->isSuperAdmin() )
+                                            <li class="nav-item has-treeview ">
+                                                <a href="#" class="nav-link @yield('Contacts')">
+                                                    <i class="fas fa-id-card"></i>
+                                                    <p>
+                                                        پیام های تماس با ما
+                                                        <i class="right fas fa-angle-left"></i>
+                                                    </p>
+                                                </a>
+                                                <ul class="nav nav-treeview">
+                                                        <li class="nav-item">
+                                                            <a href="{{route('admin_contact_us.index')}}" class="nav-link @yield('Contact')">
+                                                                <p>لیست پیام ها</p>
+                                                            </a>
+                                                        </li>
+                                                </ul>
+                                            </li>
+                                        @endif
                                         @if ((Auth::user()->isAdmin() && Auth::user()->can('Tagsُ')) || Auth::user()->isSuperAdmin() )
                                             <li class="nav-item has-treeview ">
                                                 <a href="#" class="nav-link @yield('Tag')">
@@ -419,8 +437,8 @@
 <script src="{{URL::to('/')}}/dist/js/demo.js"></script>
 <!-- CK Editor for all textarea -->
 <script>
-    $("textarea").each(function(){
-        CKEDITOR.replace( this );
+    $("textarea:not(.js-no-ckeditor)").each(function() {
+        CKEDITOR.replace(this, options);
     });
 </script>
 <!-- Page script -->

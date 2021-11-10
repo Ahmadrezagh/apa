@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="{{url('/front/css/style.css')}}">
     <link rel="stylesheet" href="{{url('/front/css/skins/all.css')}}">
     <link rel="stylesheet" href="{{url('/front/css/demo.css')}}">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @toastr_css
     <link
             rel="stylesheet"
@@ -39,6 +40,7 @@
 </head>
 
 <body class="skin-orange">
+@include('sweet::alert')
 <header class="primary">
     <div class="firstbar">
         <div class="container">
@@ -185,10 +187,7 @@
                         <figure class="foot-logo">
                             <img src="{{url(setting('logo'))}}" class="img-responsive" alt="Logo">
                         </figure>
-                        <p class="brand-description">
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم ...
-                        </p>
-                        <a href="about.html" class="btn btn-magz white">صفحه درباره ما <i
+                        <a href="{{route('about_us')}}" class="btn btn-magz white"> درباره ما <i
                                     class="ion-ios-arrow-thin-left"></i></a>
                     </div>
                 </div>
@@ -336,8 +335,8 @@
                     <div class="block-body no-margin">
                         <ul class="footer-nav-horizontal">
                             <li><a href="{{url('/')}}">خانه</a></li>
-                            <li><a href="contact.html">تماس با ما</a></li>
-                            <li><a href="about.html">در باره ما</a></li>
+                            <li><a href="{{route('contact_us')}}">تماس با ما</a></li>
+                            <li><a href="{{route('about_us')}}">در باره ما</a></li>
                         </ul>
                     </div>
                 </div>
@@ -373,6 +372,8 @@
 {{--<script src="{{url('/front/js/demo.js')}}"></script>--}}
 <script src="{{url('/front/js/e-magz.js')}}"></script>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>

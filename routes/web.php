@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('/','Front\IndexController');
-
+Route::get('about_us','Front\AboutUsController@index')->name('about_us');
+Route::get('contact_us','Front\ContactUsController@index')->name('contact_us');
+Route::post('contact_us/store','Front\ContactUsController@store')->name('contact_us.store');
 Route::resource('type.posts','Front\TypePostController');
 Route::get('tag/{tag}','Front\TagController@show')->name('tag');
 Route::get('category/{category}','Front\CategoryController@show')->name('category');
@@ -28,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('admin', 'Admin\AdminController');
         Route::resource('roles', 'Admin\RoleController');
         Route::resource('categories', 'Admin\CategoryController');
+        Route::resource('admin_contact_us', 'Admin\ContactUsMessageController');
         Route::resource('tags', 'Admin\TagController');
         Route::resource('types', 'Admin\PostTypeController');
         Route::resource('posts', 'Admin\PostController');
