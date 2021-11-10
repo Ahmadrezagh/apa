@@ -13,7 +13,7 @@ class ContactUsMessageController extends Controller
     {
 
         $this->middleware(function ($request, $next) {
-            if ((Auth::user()->isAdmin() && Auth::user()->can('Category')) || Auth::user()->isSuperAdmin())
+            if ((Auth::user()->isAdmin() && Auth::user()->can('Contact_us')) || Auth::user()->isSuperAdmin())
             {
                 return $next($request);
             }else{
