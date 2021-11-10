@@ -194,18 +194,12 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="block">
-                    <h1 class="block-title">برترین برچسب ها <div class="left"><a href="#">مشاهده همه <i
+                    <h1 class="block-title">لینک های مرتبط <div class="left"><a href="#">مشاهده همه <i
                                         class="ion-ios-arrow-thin-left"></i></a></div>
                     </h1>
                     <div class="block-body">
                         <ul class="tags">
-                            <li><a href="#">کرونا</a></li>
-                            <li><a href="#">قیمت ارز</a></li>
-                            <li><a href="#">دربی پایتخت</a></li>
-                            <li><a href="#">واژگونی اتوبوس</a></li>
-                            <li><a href="#">برجام</a></li>
-                            <li><a href="#">قیمت سکه</a></li>
-                            <li><a href="#">گوشی سامسونگ</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -230,23 +224,23 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="block">
                     <h1 class="block-title">آخرین خبر ها</h1>
-                    <div class="block-body">
+                    <div class="block-body text-right">
                         @foreach( \App\Models\Post::query()->latest()->take(4)->get() as $item)
                         <article class="article-mini">
                             <div class="inner">
                                 <figure>
-                                    <a href="single-post.html">
+                                    <a href="{{$item->link}}">
                                         <img src="{{url($item->image)}}" alt="Sample Article">
                                     </a>
                                 </figure>
                                 <div class="padding">
-                                    <h1><a href="single-post.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم</a>
+                                    <h1><a href="{{$item->link}}">{{$item->title}}</a>
                                     </h1>
                                 </div>
                             </div>
                         </article>
                         @endforeach
-                        <a href="#" class="btn btn-magz white btn-block text-center">مشاهده همه <i
+                        <a href="{{url('/posts')}}" class="btn btn-magz white btn-block text-center">مشاهده همه <i
                                     class="ion-ios-arrow-thin-left"></i></a>
                     </div>
                 </div>
