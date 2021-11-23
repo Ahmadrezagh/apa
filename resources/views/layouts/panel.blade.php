@@ -438,7 +438,7 @@
 <!-- CK Editor for all textarea -->
 <script>
     $("textarea:not(.js-no-ckeditor)").each(function() {
-        CKEDITOR.replace(this, options);
+        CKEDITOR.replace(this);
     });
 </script>
 <!-- Page script -->
