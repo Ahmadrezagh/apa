@@ -4,6 +4,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    <div class="justify-content-center d-flex text-center">
+                        <a href="https://ncsc2021.cert.pgu.ac.ir" target="_blank">
+                            <img src="{{url('events/1.JPG')}}" alt="">
+                        </a>
+                    </div>
                     <div class="line">
                         <div>آخرین مقالات</div>
                     </div>
