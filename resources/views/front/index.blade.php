@@ -6,7 +6,7 @@
                 <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="justify-content-center d-flex text-center">
                         <a href="https://ncsc2021.cert.pgu.ac.ir" target="_blank">
-                            <img src="{{url('events/3.JPG')}}" alt="">
+                            <img src="{{url('events/4.JPG')}}" alt="">
                         </a>
                     </div>
                     <div class="line">
