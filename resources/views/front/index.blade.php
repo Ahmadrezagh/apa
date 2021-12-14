@@ -114,7 +114,7 @@
                                     <h1><a href="{{$item->link}}">{{$item->title}}</a>
                                     </h1>
                                     <p>
-                                        {!! \Illuminate\Support\Str::limit($randomItem->posts()->latest()->first()->text,100) !!}
+                                        {!! \Illuminate\Support\Str::limit($item->text,100) !!}
                                     </p>
                                     <footer>
                                         <a class="btn btn-primary more" href="{{$item->link}}">
