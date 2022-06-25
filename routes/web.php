@@ -13,15 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('/','Front\IndexController');
-Route::get('about_us','Front\AboutUsController@index')->name('about_us');
-Route::get('contact_us','Front\ContactUsController@index')->name('contact_us');
-Route::post('contact_us/store','Front\ContactUsController@store')->name('contact_us.store');
-Route::resource('type.posts','Front\TypePostController');
-Route::get('tag/{tag}','Front\TagController@show')->name('tag');
-Route::get('category/{category}','Front\CategoryController@show')->name('category');
-Route::get('posts','Front\PostController@index')->name('posts');
-Route::post('newsLetter','Front\NewsLetterController@newsLetter')->name('newsLetter');
+Route::resource('/', 'Front\IndexController');
+Route::get('about_us', 'Front\AboutUsController@index')->name('about_us');
+Route::get('contact_us', 'Front\ContactUsController@index')->name('contact_us');
+Route::post('contact_us/store', 'Front\ContactUsController@store')->name('contact_us.store');
+Route::resource('type.posts', 'Front\TypePostController');
+Route::get('tag/{tag}', 'Front\TagController@show')->name('tag');
+Route::get('category/{category}', 'Front\CategoryController@show')->name('category');
+Route::get('posts', 'Front\PostController@index')->name('posts');
+Route::post('newsLetter', 'Front\NewsLetterController@newsLetter')->name('newsLetter');
 Auth::routes();
 // Admin Part
 Route::middleware(['auth'])->group(function () {
@@ -41,6 +41,12 @@ Route::middleware(['auth'])->group(function () {
     // Default
     Route::get('/home', 'HomeController@index')->name('home');
 });
+
+Route::get("/phpinfo", function () {
+    phpinfo();
+    return "";
+});
+
 
 
 
