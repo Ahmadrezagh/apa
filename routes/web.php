@@ -46,7 +46,7 @@ Route::get("/phpinfo", function () {
     phpinfo();
     return "";
 });
-
+Route::get("/certificates", "CertificateController@search");
 
 
 
