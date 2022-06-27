@@ -58,14 +58,14 @@
     </span>
 
     <span style="top: 330px;right: 100px;position: absolute;font-size: 20px">
-        {{$certificate->to}}
+        {!!  $certificate->to!!}
     </span>
     <span style="font-size: 20px;position: absolute;left: 130px;top: 240px">
         تاریخ صدور :
-        {{\Morilog\Jalali\Jalalian::forge($certificate->created_at)->format("date")}}
+        {!!  \Morilog\Jalali\Jalalian::forge(strtotime($certificate->created_at))->format("Y/m/d") !!}
     </span>
     <span style="top: 390px;right: 100px;position: absolute;font-size: 21px;width: 850px">
-        {{$certificate->body}}
+        {!! $certificate->body !!}
     </span>
     <p style="position: absolute;top: 580px;left: 200px;text-align: center;font-size: 18px">دکتر مهدی آزادی مطلق
         <br>
@@ -76,8 +76,8 @@
         <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl={{url("certificates")."/".$certificate->certificate_id}}&choe=UTF-8"
              style="width: 150px;height: 150px">
     </span>
-    <span style="position: absolute;bottom: 70px;right: 150px;font-family: sans-serif;font-size: 12px;display: block;text-align: center;direction: ltr">
-        {{url($certificate->certificate_id)}}
+    <span style="position: absolute;bottom: 60px;right:190px;font-family: sans-serif;font-size: 12px;display: block;text-align: center;direction: ltr">
+        {{url("certificates")."/".$certificate->certificate_id}}
     </span>
     <span style="position: absolute;bottom: 20px;right: 300px;font-family: sans-serif;font-size: 12px;display: block;text-align: center;direction: ltr">
         certificate ID: {{$certificate->certificate_id}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{url("certificates")}}

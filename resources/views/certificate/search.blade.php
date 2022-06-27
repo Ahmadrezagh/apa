@@ -13,10 +13,12 @@
 <div class="container open" id="main-container">
     <div class="wrapper">
         <h1>سامانه استعلام گواهی مرکز تخصصی آپای دانشگاه خلیج فارس</h1>
-        <div class="input-group">
-            <input placeholder="کد گواهی" type="text" class="text-input" required>
-            <button class="btn btn-orange" id="btn">استعلام</button>
-        </div>
+        <form>
+            <div class="input-group">
+                <input placeholder="کد گواهی" type="text" name="to" class="text-input" required>
+                <button class="btn btn-orange" id="btn" type="submit">استعلام</button>
+            </div>
+        </form>
         <p class="link-helpful">
             لینک های مفید
         </p>
@@ -26,9 +28,11 @@
             <a href="https://erp.pgu.ac.ir" target="_blank">سامانه سادا</a>
             <a href="https://learning.cert.pgu.ac.ir">سایت آموزش مرکز آپای دانشگاه خلیج فارس</a>
         </div>
-        <p class="tips">*: برای پرینت گواهی در صفحه نمایش گواهی با کلید ترکیبی ctrl + p میتوانید مدرک را پرینت بگیرید و یا نسخه PDF آن را ذخیره کنید.
+        <p class="tips">*: برای پرینت گواهی در صفحه نمایش گواهی با کلید ترکیبی ctrl + p میتوانید مدرک را پرینت بگیرید و
+            یا نسخه PDF آن را ذخیره کنید.
             <br>
-            برای نمایش صحیح گواهی در مرحله print از منو layout گزینه landscape انتخاب کنید و more setting گزینه Margins را روی None قرار دهید.
+            برای نمایش صحیح گواهی در مرحله print از منو layout گزینه landscape انتخاب کنید و more setting گزینه Margins
+            را روی None قرار دهید.
         </p>
     </div>
 </div>

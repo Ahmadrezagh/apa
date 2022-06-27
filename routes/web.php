@@ -22,6 +22,10 @@ Route::get('tag/{tag}', 'Front\TagController@show')->name('tag');
 Route::get('category/{category}', 'Front\CategoryController@show')->name('category');
 Route::get('posts', 'Front\PostController@index')->name('posts');
 Route::post('newsLetter', 'Front\NewsLetterController@newsLetter')->name('newsLetter');
+
+Route::get('/certificates/{certificateID}', 'CertificateController@find')->name('showCertificate');
+Route::get("/certificates", "CertificateController@search")->name("searchCertificate");
+
 Auth::routes();
 // Admin Part
 Route::middleware(['auth'])->group(function () {
@@ -46,7 +50,6 @@ Route::get("/phpinfo", function () {
     phpinfo();
     return "";
 });
-Route::get("/certificates", "CertificateController@search")->name("searchCertificate");
 
 
 
