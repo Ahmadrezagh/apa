@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/certificate/css/main.css">
+    <link rel="stylesheet" href="/certificate/css/toastr.min.css">
     <title>سامانه استعلام گواهی مرکز تخصصی آپای دانشگاه خلیج فارس</title>
 </head>
 <body>
@@ -13,7 +14,7 @@
     <div class="wrapper">
         <h1>سامانه استعلام گواهی مرکز تخصصی آپای دانشگاه خلیج فارس</h1>
         <div class="input-group">
-            <input placeholder="کد گواهی" type="text" class="text-input">
+            <input placeholder="کد گواهی" type="text" class="text-input" required>
             <button class="btn btn-orange" id="btn">استعلام</button>
         </div>
         <p class="link-helpful">
@@ -31,6 +32,12 @@
         </p>
     </div>
 </div>
-<script src="/certificate/css/main.css"></script>
+<script src="{{URL::to('/').'/plugins/jquery/jquery.min.js'}}"></script>
+<script src="/certificate/js/toastr.min.js"></script>
+@foreach ($errors->all() as $error)
+    <script>
+        toastr.error('{{$error}}')
+    </script>
+@endforeach
 </body>
 </html>

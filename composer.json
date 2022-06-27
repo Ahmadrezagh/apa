@@ -18,7 +18,8 @@
         "pishran/laravel-persian-slug": "^2.1",
         "simplehtmldom/simplehtmldom": "^2.0@RC",
         "uxweb/sweet-alert": "^2.0",
-        "yoeunes/toastr": "^1.2"
+        "yoeunes/toastr": "^1.2",
+        "morilog/jalali": "^3.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -26,8 +27,7 @@
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3.3",
-        "morilog/jalali": "^3.0"
+        "phpunit/phpunit": "^9.3.3"
     },
     "config": {
         "optimize-autoloader": true,
