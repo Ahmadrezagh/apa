@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('posts', 'Admin\PostController');
         Route::resource('users', 'Admin\UserController');
         Route::resource('settings', 'Admin\SettingController');
+        Route::resource('certificates', 'Admin\CretificateController');
 
     });
     // Default

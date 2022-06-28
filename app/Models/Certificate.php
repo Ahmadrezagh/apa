@@ -18,7 +18,8 @@ class Certificate extends Model
         "body",
         "certificate_id",
         "left_image",
-        "right_image"
+        "right_image",
+        "show_name"
     ];
 
 }

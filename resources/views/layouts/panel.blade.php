@@ -11,7 +11,8 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet" href="{{URL::to('/')}}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet"
+          href="{{URL::to('/')}}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="{{URL::to('/')}}/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
@@ -40,7 +41,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Toastr css -->
     @toastr_css
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
 </head>
 <body style="font-family: IranYekan" class="hold-transition sidebar-mini layout-fixed">
 @include('sweet::alert')
@@ -57,81 +58,81 @@
 
         <!-- SEARCH FORM -->
         <form class="form-inline ml-3">
-{{--            <div class="input-group input-group-sm">--}}
-{{--                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">--}}
-{{--                <div class="input-group-append">--}}
-{{--                    <button class="btn btn-navbar" type="submit">--}}
-{{--                        <i class="fas fa-search"></i>--}}
-{{--                    </button>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--            <div class="input-group input-group-sm">--}}
+            {{--                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">--}}
+            {{--                <div class="input-group-append">--}}
+            {{--                    <button class="btn btn-navbar" type="submit">--}}
+            {{--                        <i class="fas fa-search"></i>--}}
+            {{--                    </button>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
         </form>
 
         <!-- Right navbar links -->
         <ul class="navbar-nav mr-auto-navbav">
             <!-- Messages Dropdown Menu -->
             <li class="nav-item dropdown">
-{{--                <a class="nav-link" data-toggle="dropdown" href="#">--}}
-{{--                    <i class="far fa-comments"></i>--}}
-{{--                    <span class="badge badge-danger navbar-badge">3</span>--}}
-{{--                </a>--}}
-{{--                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">--}}
-{{--                    <a href="#" class="dropdown-item">--}}
-{{--                        <!-- Message Start -->--}}
-{{--                        <div class="media">--}}
-{{--                            <img src="{{URL::to('/')}}/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">--}}
-{{--                            <div class="media-body">--}}
-{{--                                <h3 class="dropdown-item-title">--}}
-{{--                                    Brad Diesel--}}
-{{--                                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>--}}
-{{--                                </h3>--}}
-{{--                                <p class="text-sm">Call me whenever you can...</p>--}}
-{{--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <!-- Message End -->--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-divider"></div>--}}
-{{--                    <a href="#" class="dropdown-item">--}}
-{{--                        <!-- Message Start -->--}}
-{{--                        <div class="media">--}}
-{{--                            <img src="{{URL::to('/')}}/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">--}}
-{{--                            <div class="media-body">--}}
-{{--                                <h3 class="dropdown-item-title">--}}
-{{--                                    John Pierce--}}
-{{--                                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>--}}
-{{--                                </h3>--}}
-{{--                                <p class="text-sm">I got your message bro</p>--}}
-{{--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <!-- Message End -->--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-divider"></div>--}}
-{{--                    <a href="#" class="dropdown-item">--}}
-{{--                        <!-- Message Start -->--}}
-{{--                        <div class="media">--}}
-{{--                            <img src="{{URL::to('/')}}/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">--}}
-{{--                            <div class="media-body">--}}
-{{--                                <h3 class="dropdown-item-title">--}}
-{{--                                    Nora Silvester--}}
-{{--                                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>--}}
-{{--                                </h3>--}}
-{{--                                <p class="text-sm">The subject goes here</p>--}}
-{{--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <!-- Message End -->--}}
-{{--                    </a>--}}
-{{--                    <div class="dropdown-divider"></div>--}}
-{{--                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>--}}
-{{--                </div>--}}
+                {{--                <a class="nav-link" data-toggle="dropdown" href="#">--}}
+                {{--                    <i class="far fa-comments"></i>--}}
+                {{--                    <span class="badge badge-danger navbar-badge">3</span>--}}
+                {{--                </a>--}}
+                {{--                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">--}}
+                {{--                    <a href="#" class="dropdown-item">--}}
+                {{--                        <!-- Message Start -->--}}
+                {{--                        <div class="media">--}}
+                {{--                            <img src="{{URL::to('/')}}/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">--}}
+                {{--                            <div class="media-body">--}}
+                {{--                                <h3 class="dropdown-item-title">--}}
+                {{--                                    Brad Diesel--}}
+                {{--                                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>--}}
+                {{--                                </h3>--}}
+                {{--                                <p class="text-sm">Call me whenever you can...</p>--}}
+                {{--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                        <!-- Message End -->--}}
+                {{--                    </a>--}}
+                {{--                    <div class="dropdown-divider"></div>--}}
+                {{--                    <a href="#" class="dropdown-item">--}}
+                {{--                        <!-- Message Start -->--}}
+                {{--                        <div class="media">--}}
+                {{--                            <img src="{{URL::to('/')}}/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">--}}
+                {{--                            <div class="media-body">--}}
+                {{--                                <h3 class="dropdown-item-title">--}}
+                {{--                                    John Pierce--}}
+                {{--                                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>--}}
+                {{--                                </h3>--}}
+                {{--                                <p class="text-sm">I got your message bro</p>--}}
+                {{--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                        <!-- Message End -->--}}
+                {{--                    </a>--}}
+                {{--                    <div class="dropdown-divider"></div>--}}
+                {{--                    <a href="#" class="dropdown-item">--}}
+                {{--                        <!-- Message Start -->--}}
+                {{--                        <div class="media">--}}
+                {{--                            <img src="{{URL::to('/')}}/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">--}}
+                {{--                            <div class="media-body">--}}
+                {{--                                <h3 class="dropdown-item-title">--}}
+                {{--                                    Nora Silvester--}}
+                {{--                                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>--}}
+                {{--                                </h3>--}}
+                {{--                                <p class="text-sm">The subject goes here</p>--}}
+                {{--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                        <!-- Message End -->--}}
+                {{--                    </a>--}}
+                {{--                    <div class="dropdown-divider"></div>--}}
+                {{--                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>--}}
+                {{--                </div>--}}
             </li>
             <!-- Notifications Dropdown Menu -->
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
-{{--                    <i class="far fa-bell"></i>--}}
-{{--                    <span class="badge badge-warning navbar-badge">15</span>--}}
+                    {{--                    <i class="far fa-bell"></i>--}}
+                    {{--                    <span class="badge badge-warning navbar-badge">15</span>--}}
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <span class="dropdown-item dropdown-header">15 Notifications</span>
@@ -155,9 +156,9 @@
                 </div>
             </li>
             <li class="nav-item">
-{{--                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">--}}
-{{--                    <i class="fas fa-th-large"></i>--}}
-{{--                </a>--}}
+                {{--                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">--}}
+                {{--                    <i class="fas fa-th-large"></i>--}}
+                {{--                </a>--}}
             </li>
         </ul>
     </nav>
@@ -179,183 +180,205 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                                        <li class="nav-item">
-                                            <a href="{{route('home')}}" class="nav-link @yield('home')">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
+                    <li class="nav-item">
+                        <a href="{{route('home')}}" class="nav-link @yield('home')">
 
-                                                <i class="fas fa-home"></i>
-                                                <p>
-                                                    خانه
-                                                </p>
-                                            </a>
-                                        </li>
-                                        @if ((Auth::user()->isAdmin() && Auth::user()->can('Admin')) || Auth::user()->isSuperAdmin() )
-                                        <li class="nav-item has-treeview ">
-                                            <a href="#" class="nav-link @yield('admins')">
-                                                <i class="fas fa-user-shield"></i>
-                                                <p>
-                                                    مدیریت
-                                                    <i class="right fas fa-angle-left"></i>
-                                                </p>
-                                            </a>
-                                            <ul class="nav nav-treeview">
-                                                <li class="nav-item">
-                                                    <a href="{{route('admin.index')}}" class="nav-link @yield('admins_list')">
-                                                        <p>مدیر ها</p>
-                                                    </a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="{{route('roles.index')}}" class="nav-link @yield('roles')">
-                                                        <p>نقش ها</p>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        @endif
-                                        @if ((Auth::user()->isAdmin() && Auth::user()->can('Posts')) || Auth::user()->isSuperAdmin() )
-                                            <li class="nav-item has-treeview ">
-                                                <a href="#" class="nav-link @yield('Post')">
-                                                    <i class="fas fa-clipboard-list"></i>
-                                                    <p>
-                                                        پست ها
-                                                        <i class="right fas fa-angle-left"></i>
-                                                    </p>
-                                                </a>
-                                                <ul class="nav nav-treeview">
-                                                    <li class="nav-item">
-                                                        <a href="{{route('posts.index')}}" class="nav-link @yield('Posts')">
-                                                            <p>لیست پست ها</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        @endif
+                            <i class="fas fa-home"></i>
+                            <p>
+                                خانه
+                            </p>
+                        </a>
+                    </li>
+                    @if ((Auth::user()->isAdmin() && Auth::user()->can('Admin')) || Auth::user()->isSuperAdmin() )
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link @yield('admins')">
+                                <i class="fas fa-user-shield"></i>
+                                <p>
+                                    مدیریت
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.index')}}" class="nav-link @yield('admins_list')">
+                                        <p>مدیر ها</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('roles.index')}}" class="nav-link @yield('roles')">
+                                        <p>نقش ها</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+                    @if ((Auth::user()->isAdmin() && Auth::user()->can('Posts')) || Auth::user()->isSuperAdmin() )
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link @yield('Post')">
+                                <i class="fas fa-clipboard-list"></i>
+                                <p>
+                                    پست ها
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('posts.index')}}" class="nav-link @yield('Posts')">
+                                        <p>لیست پست ها</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
 
-                                        @if ((Auth::user()->isAdmin() && Auth::user()->can('Categories')) || Auth::user()->isSuperAdmin() )
-                                            <li class="nav-item has-treeview ">
-                                                <a href="#" class="nav-link @yield('Categories')">
-                                                    <i class="fas fa-paperclip"></i>
-                                                    <p>
-                                                        دسته بندی ها
-                                                        <i class="right fas fa-angle-left"></i>
-                                                    </p>
-                                                </a>
-                                                <ul class="nav nav-treeview">
-                                                        <li class="nav-item">
-                                                            <a href="{{route('categories.index')}}" class="nav-link @yield('Category')">
-                                                                <p>دسته بندی</p>
-                                                            </a>
-                                                        </li>
-                                                </ul>
-                                            </li>
-                                        @endif
-                                        @if ((Auth::user()->isAdmin() && Auth::user()->can('Contact_us')) || Auth::user()->isSuperAdmin() )
-                                            <li class="nav-item has-treeview ">
-                                                <a href="#" class="nav-link @yield('Contacts')">
-                                                    <i class="fas fa-id-card"></i>
-                                                    <p>
-                                                        پیام های تماس با ما
-                                                        <i class="right fas fa-angle-left"></i>
-                                                    </p>
-                                                </a>
-                                                <ul class="nav nav-treeview">
-                                                        <li class="nav-item">
-                                                            <a href="{{route('admin_contact_us.index')}}" class="nav-link @yield('Contact')">
-                                                                <p>لیست پیام ها</p>
-                                                            </a>
-                                                        </li>
-                                                </ul>
-                                            </li>
-                                        @endif
-                                        @if ((Auth::user()->isAdmin() && Auth::user()->can('Tagsُ')) || Auth::user()->isSuperAdmin() )
-                                            <li class="nav-item has-treeview ">
-                                                <a href="#" class="nav-link @yield('Tag')">
-                                                    <i class="fas fa-tags"></i>
-                                                    <p>
-                                                        تگ ها
-                                                        <i class="right fas fa-angle-left"></i>
-                                                    </p>
-                                                </a>
-                                                <ul class="nav nav-treeview">
-                                                    <li class="nav-item">
-                                                        <a href="{{route('tags.index')}}" class="nav-link @yield('Tags')">
-                                                            <p>لیست تگ ها</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        @endif
+                    @if ((Auth::user()->isAdmin() && Auth::user()->can('Categories')) || Auth::user()->isSuperAdmin() )
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link @yield('Categories')">
+                                <i class="fas fa-paperclip"></i>
+                                <p>
+                                    دسته بندی ها
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('categories.index')}}" class="nav-link @yield('Category')">
+                                        <p>دسته بندی</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+                    @if ((Auth::user()->isAdmin() && Auth::user()->can('Contact_us')) || Auth::user()->isSuperAdmin() )
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link @yield('Contacts')">
+                                <i class="fas fa-id-card"></i>
+                                <p>
+                                    پیام های تماس با ما
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin_contact_us.index')}}" class="nav-link @yield('Contact')">
+                                        <p>لیست پیام ها</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+                    @if ((Auth::user()->isAdmin() && Auth::user()->can('Tagsُ')) || Auth::user()->isSuperAdmin() )
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link @yield('Tag')">
+                                <i class="fas fa-tags"></i>
+                                <p>
+                                    تگ ها
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('tags.index')}}" class="nav-link @yield('Tags')">
+                                        <p>لیست تگ ها</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
 
-                                        @if ((Auth::user()->isAdmin() && Auth::user()->can('Types')) || Auth::user()->isSuperAdmin() )
-                                            <li class="nav-item has-treeview ">
-                                                <a href="#" class="nav-link @yield('Type')">
-                                                    <i class="fas fa-clipboard-list"></i>
-                                                    <p>
-                                                        نوع مقالات
-                                                        <i class="right fas fa-angle-left"></i>
-                                                    </p>
-                                                </a>
-                                                <ul class="nav nav-treeview">
-                                                    <li class="nav-item">
-                                                        <a href="{{route('types.index')}}" class="nav-link @yield('Types')">
-                                                            <p>لیست انواع مقالات </p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        @endif
+                    @if ((Auth::user()->isAdmin() && Auth::user()->can('Types')) || Auth::user()->isSuperAdmin() )
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link @yield('Type')">
+                                <i class="fas fa-clipboard-list"></i>
+                                <p>
+                                    نوع مقالات
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('types.index')}}" class="nav-link @yield('Types')">
+                                        <p>لیست انواع مقالات </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
 
-                                        @if ((Auth::user()->isAdmin() && Auth::user()->can('User')) || Auth::user()->isSuperAdmin() )
-                                            <li class="nav-item has-treeview ">
-                                                <a href="#" class="nav-link @yield('User')">
-                                                    <i class="fas fa-users"></i>
-                                                    <p>
-                                                        مدیریت کاربران
-                                                        <i class="right fas fa-angle-left"></i>
-                                                    </p>
-                                                </a>
-                                                <ul class="nav nav-treeview">
-                                                    <li class="nav-item">
-                                                        <a href="{{route('users.index')}}" class="nav-link @yield('Users')">
-                                                            <p>کاربران</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        @endif
+                    @if ((Auth::user()->isAdmin() && Auth::user()->can('User')) || Auth::user()->isSuperAdmin() )
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link @yield('User')">
+                                <i class="fas fa-users"></i>
+                                <p>
+                                    مدیریت کاربران
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('users.index')}}" class="nav-link @yield('Users')">
+                                        <p>کاربران</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
 
-                                        @if ((Auth::user()->isAdmin() && Auth::user()->can('Setting')) || Auth::user()->isSuperAdmin() )
-                                            <li class="nav-item has-treeview ">
-                                                <a href="#" class="nav-link @yield('Setting')">
-                                                    <i class="fas fa-cogs"></i>
-                                                    <p>
-                                                        تنظیمات
-                                                        <i class="right fas fa-angle-left"></i>
-                                                    </p>
-                                                </a>
-                                                <ul class="nav nav-treeview">
-                                                    @foreach($setting_groups as $group)
-                                                        <li class="nav-item">
-                                                            <a href="{{route('settings.show',$group->id)}}" class="nav-link @yield($group->name)">
-                                                                <p>{{$group->name}}</p>
-                                                            </a>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            </li>
-                                        @endif
-                                        <li >
-                                            <a class="nav-link btn btn-danger" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
+                    @if ((Auth::user()->isAdmin() && Auth::user()->can('Setting')) || Auth::user()->isSuperAdmin() )
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link @yield('Setting')">
+                                <i class="fas fa-cogs"></i>
+                                <p>
+                                    تنظیمات
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                @foreach($setting_groups as $group)
+                                    <li class="nav-item">
+                                        <a href="{{route('settings.show',$group->id)}}"
+                                           class="nav-link @yield($group->name)">
+                                            <p>{{$group->name}}</p>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    @endif
+                    @if (Auth::user()->isSuperAdmin() )
+                        <li class="nav-item has-treeview ">
+                            <a href="#" class="nav-link @yield('Certificate')">
+                                <i class="fas fa-file"></i>
+                                <p>
+                                    مدیریت گواهی ها
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('certificates.index')}}" class="nav-link @yield('Certificates')">
+                                        <p>گواهی ها</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+
+
+                    <li>
+                        <a class="nav-link btn btn-danger" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();">
-                                                <i class="fas fa-sign-out-alt"></i>
-                                                <p>خروج</p>
-                                            </a>
+                            <i class="fas fa-sign-out-alt"></i>
+                            <p>خروج</p>
+                        </a>
 
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                @csrf
-                                            </form>
-                                        </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
 
                 </ul>
             </nav>
@@ -365,15 +388,16 @@
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-        @yield('content')
+    @yield('content')
     <!-- /.content-wrapper -->
-    <footer class="main-footer" >
+    <footer class="main-footer">
         <!-- To the right -->
         <div class="float-right d-none d-sm-inline">
-           طراحی و توسعه : <a href="https://ahmadrezaghanbari.ir">احمدرضا قنبری</a>
+            طراحی و توسعه : <a href="https://ahmadrezaghanbari.ir">احمدرضا قنبری</a>
         </div>
         <!-- Default to the left -->
-        <strong>  تمامی حقوق مادی و معنوی برای وبسایت <a href="{{setting('url')}}">{{setting('name')}}</a> محفوظ است </strong>
+        <strong> تمامی حقوق مادی و معنوی برای وبسایت <a href="{{setting('url')}}">{{setting('name')}}</a> محفوظ است
+        </strong>
     </footer>
 
     <!-- Control Sidebar -->
@@ -405,39 +429,38 @@
 <script src="{{URL::to('/').'/plugins/datatables-responsive/js/responsive.bootstrap4.min.js'}}"></script>
 <script>
     $(function () {
-      $("#table").DataTable({
-        "responsive": true,
-        "autoWidth": false,
-          "rtl" : true,
-          "language": {
-              "paginate": {
-                  "previous": "قبلی",
-                  "next" : "بعدی"
-              },
-              "sLengthMenu": "تعداد رکورد در صفحه _MENU_ ",
-              "sSearch" : "جستجو:",
-              "emptyTable":     "هیچ داده ای برای نمایش موجود نیست",
-              "info":           "نمایش _START_ تا _END_ از _TOTAL_ رکورد",
-              "infoEmpty":      "نمایش 0 تا 0 از 0 رکورد",
+        $("#table").DataTable({
+            "responsive": true,
+            "autoWidth": false,
+            "rtl": true,
+            "language": {
+                "paginate": {
+                    "previous": "قبلی",
+                    "next": "بعدی"
+                },
+                "sLengthMenu": "تعداد رکورد در صفحه _MENU_ ",
+                "sSearch": "جستجو:",
+                "emptyTable": "هیچ داده ای برای نمایش موجود نیست",
+                "info": "نمایش _START_ تا _END_ از _TOTAL_ رکورد",
+                "infoEmpty": "نمایش 0 تا 0 از 0 رکورد",
 
-              "infoFiltered":   "(نتیجه جستجو بین _MAX_ رکورد)",
-              "zeroRecords":    "اطلاعاتی مبنی بر جستجو شما موجود نیست...",
-          },
+                "infoFiltered": "(نتیجه جستجو بین _MAX_ رکورد)",
+                "zeroRecords": "اطلاعاتی مبنی بر جستجو شما موجود نیست...",
+            },
 
 
-
-      });
+        });
     });
     $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 
-  </script>
+</script>
 
 <script src="{{URL::to('/')}}/dist/js/demo.js"></script>
 <!-- CK Editor for all textarea -->
 <script>
-    $("textarea:not(.js-no-ckeditor)").each(function() {
+    $("textarea:not(.js-no-ckeditor)").each(function () {
         CKEDITOR.replace(this);
     });
 </script>
@@ -450,7 +473,7 @@
 
 @endforeach
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.js-example-basic-multiple').select2();
     });
 
