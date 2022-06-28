@@ -62,7 +62,7 @@
     </span>
     <span style="font-size: 20px;position: absolute;left: 130px;top: 240px">
         تاریخ صدور :
-        {!!  \Morilog\Jalali\Jalalian::forge(strtotime($certificate->created_at))->format("Y/m/d") !!}
+        {!!  toPersianNumber(\Morilog\Jalali\Jalalian::forge(strtotime($certificate->created_at))->format("Y/m/d")) !!}
     </span>
     <span style="top: 390px;right: 100px;position: absolute;font-size: 21px;width: 850px">
         {!! $certificate->body !!}
