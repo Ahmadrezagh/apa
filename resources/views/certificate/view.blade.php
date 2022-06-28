@@ -48,24 +48,24 @@
     <img src="{{$certificate->right_image}}"
          style="position: absolute;right: 150px;top: 120px;height: 110px;width: 110px">
     <span style="position: absolute;top: 20px;font-size: 30px;left: 50%;transform: translateX(-50%);white-space: nowrap">
-        {{$certificate->big_title}}
+        {{toPersianNumber($certificate->big_title)}}
     </span>
     <span style="position: absolute;top: 110px;font-size: 30px;left: 50%;transform: translateX(-50%);white-space: nowrap">
-        {{$certificate->secondary_title}}
+        {{toPersianNumber($certificate->secondary_title)}}
     </span>
     <span style="position: absolute;top: 210px;font-size: 20px;left: 50%;transform: translateX(-50%);white-space: nowrap">
-        {{$certificate->title}}
+        {{toPersianNumber($certificate->title)}}
     </span>
 
     <span style="top: 330px;right: 100px;position: absolute;font-size: 20px">
-        {!!  $certificate->to!!}
+        {!!  toPersianNumber($certificate->to)!!}
     </span>
     <span style="font-size: 20px;position: absolute;left: 130px;top: 240px">
         تاریخ صدور :
         {!!  toPersianNumber(\Morilog\Jalali\Jalalian::forge(strtotime($certificate->created_at))->format("Y/m/d")) !!}
     </span>
     <span style="top: 390px;right: 100px;position: absolute;font-size: 21px;width: 850px">
-        {!! $certificate->body !!}
+        {!! toPersianNumber($certificate->body) !!}
     </span>
     <p style="position: absolute;top: 580px;left: 200px;text-align: center;font-size: 18px">دکتر مهدی آزادی مطلق
         <br>
