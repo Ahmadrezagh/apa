@@ -29,9 +29,6 @@
 
 
         @media print {
-            @page {
-                size: A4;
-            }
 
             .p {
                 display: none;
