@@ -86,12 +86,7 @@
     <!-- Start nav -->
     <nav class="menu">
         <div class="container">
-            <div class="brand">
-                <a href="#">
-                    <img src="{{url(setting('logo'))}}" alt="{{setting('name')}}" style=" width: auto;
-    max-height: 50px;">
-                </a>
-            </div>
+
             <div class="mobile-toggle">
                 <a href="#" data-toggle="menu" data-target="#menu-list"><i class="ion-navicon-round"></i></a>
             </div>
@@ -147,7 +142,7 @@
                                                 <div class="inner">
                                                     <figure>
                                                         <a href="{{route('type.posts.show',[$item->slug,$post->slug])}}">
-                                                            <img src="{{url($post->image)}}" alt="Sample Article">
+                                                            <img src="{{url($post->image)}}" alt="Sample Article" >
                                                         </a>
                                                     </figure>
                                                     <div class="padding">

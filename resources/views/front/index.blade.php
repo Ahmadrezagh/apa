@@ -20,7 +20,7 @@
                                         <div class="inner my-1">
                                             <figure>
                                                 <a href="{{$item->link}}">
-                                                    <img src="{{url($item->image)}}" alt="{{$item->title}}" style="width: 350px;height: 250px">
+                                                    <img src="{{url($item->image)}}" alt="{{$item->title}}" style="width: 100%;height: 250px">
                                                 </a>
                                             </figure>
                                             <div class="padding pt-3">
@@ -76,7 +76,7 @@
                                     <div class="inner">
                                         <figure>
                                             <a href="{{$item->link}}">
-                                                <img src="{{url($item->image)}}" alt="{{$item->title}}" style="width: 80px;height: 57px">
+                                                <img src="{{url($item->image)}}" alt="{{$item->title}}" style="width: 100%;height: 57px">
                                             </a>
                                         </figure>
                                         <div class="padding">
@@ -101,7 +101,7 @@
                             <div class="inner">
                                 <figure>
                                     <a href="{{$item->link}}">
-                                        <img src="{{url($item->image)}}" alt="{{$item->title}}" style="width: 350px;height: 250px">
+                                        <img src="{{url($item->image)}}" alt="{{$item->title}}" style="width: 100%;height: 250px">
                                     </a>
                                 </figure>
                                 <div class="details">
