@@ -205,7 +205,7 @@
                                     class="ion-ios-arrow-thin-left"></i></div>
                     </h1>
                     <div class="block-body">
-                        <ul class="tags">
+                        <ul class="tags" style="text-align: justify">
                             <li> شماره تـماس : 07731222078</li>
                             <li> آدرس : بوشهر دانشگاه خلیج فارس ساختمان مرکز آپا</li>
                         </ul>
