@@ -10,7 +10,7 @@
     <meta name="author" content="Kodinger">
     <meta name="keyword" content="مرکز آپا بوشهر">
     <!-- Shareable -->
-    <meta property="og:title" content="مرکز آپا بوشهر" />
+    <meta property="og:title" content="مرکز آپا بوشهر"/>
     <title>{{setting('name')}}</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{url('/front/scripts/bootstrap/bootstrap.min.css')}}">
@@ -62,7 +62,7 @@
                                        placeholder="جستجوی عبارت مورد نظر ...">
                                 <div class="input-group-btn">
                                     <button class="btn btn-primary" type="submit">
-                                        <a class="ion-search text-white" ></a>
+                                        <a class="ion-search text-white"></a>
                                     </button>
                                 </div>
                             </div>
@@ -104,64 +104,74 @@
                         <a href="#">دسته بندی ها <i class="ion-ios-arrow-left"></i></a>
                         <ul class="dropdown-menu">
                             @foreach(\App\Models\Category::all() as $category)
-                            <li><a href="{{route('category',$category->slug)}}">{{$category->name}}</a></li>
+                                <li><a href="{{route('category',$category->slug)}}">{{$category->name}}</a></li>
                             @endforeach
                         </ul>
                     </li>
                     @foreach(\App\Models\PostType::all() as $item)
-                    <li class="dropdown magz-dropdown magz-dropdown-megamenu">
-                        <a href="#">{{$item->name}} <i
-                                    class="ion-ios-arrow-left"></i>
-                        </a>
-                        <div class="dropdown-menu megamenu" >
-                            <div class="megamenu-inner">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <h2 class="megamenu-title"><a href="{{route('type.posts.index',$item->slug)}}">{{$item->name}}</a></h2>
+                        <li class="dropdown magz-dropdown magz-dropdown-megamenu">
+                            <a href="#">{{$item->name}} <i
+                                        class="ion-ios-arrow-left"></i>
+                            </a>
+                            <div class="dropdown-menu megamenu">
+                                <div class="megamenu-inner">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <h2 class="megamenu-title"><a
+                                                                href="{{route('type.posts.index',$item->slug)}}">{{$item->name}}</a>
+                                                    </h2>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <ul class="vertical-menu">
+                                            <ul class="vertical-menu">
 
-                                            @foreach($item->posts()->latest()->take(4)->get() as $post)
-                                            <li><a href="{{route('type.posts.show',[$item->slug,$post->slug])}}"><i class="ion-ios-circle-outline"></i>{{$post->title}}</a></li>
-                                            @endforeach
-                                                <li><a href="{{route('type.posts.index',[$item->slug])}}"><i class="ion-ios-circle-outline"></i>بیشتر...</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <h2 class="megamenu-title">{{$item->name}} اخیر</h2>
-                                            </div>
+                                                @foreach($item->posts()->latest()->take(4)->get() as $post)
+                                                    <li>
+                                                        <a href="{{route('type.posts.show',[$item->slug,$post->slug])}}"><i
+                                                                    class="ion-ios-circle-outline"></i>{{$post->title}}
+                                                        </a></li>
+                                                @endforeach
+                                                <li><a href="{{route('type.posts.index',[$item->slug])}}"><i
+                                                                class="ion-ios-circle-outline"></i>بیشتر...</a></li>
+                                            </ul>
                                         </div>
-                                        <div class="row">
-                                            @foreach($item->posts()->latest()->take(3)->get() as $post)
-                                            <article class="article col-lg-4 mini">
-                                                <div class="inner">
-                                                    <figure>
-                                                        <a href="{{route('type.posts.show',[$item->slug,$post->slug])}}">
-                                                            <img src="{{url($post->image)}}" alt="Sample Article" >
-                                                        </a>
-                                                    </figure>
-                                                    <div class="padding">
-                                                        <div class="detail">
-                                                            <div class="time">{{$post->date}}</div>
-                                                            <div class="category"><a href="{{route('type.posts.index',$item->slug)}}">{{$item->title}}</a>
+                                        <div class="col-lg-9">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <h2 class="megamenu-title">{{$item->name}} اخیر</h2>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                @foreach($item->posts()->latest()->take(3)->get() as $post)
+                                                    <article class="article col-lg-4 mini">
+                                                        <div class="inner">
+                                                            <figure>
+                                                                <a href="{{route('type.posts.show',[$item->slug,$post->slug])}}">
+                                                                    <img src="{{url($post->image)}}"
+                                                                         alt="Sample Article">
+                                                                </a>
+                                                            </figure>
+                                                            <div class="padding">
+                                                                <div class="detail">
+                                                                    <div class="time">{{$post->date}}</div>
+                                                                    <div class="category"><a
+                                                                                href="{{route('type.posts.index',$item->slug)}}">{{$item->title}}</a>
+                                                                    </div>
+                                                                </div>
+                                                                <h2>
+                                                                    <a href="{{route('type.posts.show',[$item->slug,$post->slug])}}">{{$post->title}}</a>
+                                                                </h2>
                                                             </div>
                                                         </div>
-                                                        <h2><a href="{{route('type.posts.show',[$item->slug,$post->slug])}}">{{$post->title}}</a></h2>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                            @endforeach
+                                                    </article>
+                                                @endforeach
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
                     @endforeach
 
                 </ul>
@@ -190,12 +200,14 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                 <div class="block">
-                    <h1 class="block-title">لینک های مرتبط <div class="left"><a href="#">مشاهده همه <i
-                                        class="ion-ios-arrow-thin-left"></i></a></div>
+                    <h1 class="block-title">اطلاعات کامل مرکز
+                        <div class="left"><i
+                                    class="ion-ios-arrow-thin-left"></i></div>
                     </h1>
                     <div class="block-body">
                         <ul class="tags">
-
+                            <li> شماره تـماس : 07731222078</li>
+                            <li> آدرس : بوشهر دانشگاه خلیج فارس ساختمان مرکز آپا</li>
                         </ul>
                     </div>
                 </div>
@@ -222,19 +234,19 @@
                     <h1 class="block-title">آخرین خبر ها</h1>
                     <div class="block-body text-right">
                         @foreach( \App\Models\Post::query()->latest()->take(4)->get() as $item)
-                        <article class="article-mini">
-                            <div class="inner">
-                                <figure>
-                                    <a href="{{$item->link}}">
-                                        <img src="{{url($item->image)}}" alt="Sample Article">
-                                    </a>
-                                </figure>
-                                <div class="padding">
-                                    <h1><a href="{{$item->link}}">{{$item->title}}</a>
-                                    </h1>
+                            <article class="article-mini">
+                                <div class="inner">
+                                    <figure>
+                                        <a href="{{$item->link}}">
+                                            <img src="{{url($item->image)}}" alt="Sample Article">
+                                        </a>
+                                    </figure>
+                                    <div class="padding">
+                                        <h1><a href="{{$item->link}}">{{$item->title}}</a>
+                                        </h1>
+                                    </div>
                                 </div>
-                            </div>
-                        </article>
+                            </article>
                         @endforeach
                         <a href="{{url('/posts')}}" class="btn btn-magz white btn-block text-center">مشاهده همه <i
                                     class="ion-ios-arrow-thin-left"></i></a>
