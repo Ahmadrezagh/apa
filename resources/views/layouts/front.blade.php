@@ -100,14 +100,14 @@
                     <li class="for-tablet"><a href="{{route('register')}}">ثبت نام</a></li>
                     <li><a href="{{url('/')}}">خانه</a></li>
 
-                    <li class="dropdown magz-dropdown">
+                    {{--<li class="dropdown magz-dropdown">
                         <a href="#">دسته بندی ها <i class="ion-ios-arrow-left"></i></a>
                         <ul class="dropdown-menu">
                             @foreach(\App\Models\Category::all() as $category)
                                 <li><a href="{{route('category',$category->slug)}}">{{$category->name}}</a></li>
                             @endforeach
                         </ul>
-                    </li>
+                    </li>--}}
                     @foreach(\App\Models\PostType::all() as $item)
                         <li class="dropdown magz-dropdown magz-dropdown-megamenu">
                             <a href="#">{{$item->name}} <i
