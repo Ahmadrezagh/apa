@@ -393,10 +393,10 @@
     <footer class="main-footer">
         <!-- To the right -->
         <div class="float-right d-none d-sm-inline">
-            طراحی و توسعه : <a href="https://ahmadrezaghanbari.ir">احمدرضا قنبری</a>
+{{--            طراحی و توسعه : <a href="https://ahmadrezaghanbari.ir">احمدرضا قنبری</a>--}}
         </div>
         <!-- Default to the left -->
-        <strong> تمامی حقوق مادی و معنوی برای وبسایت <a href="{{setting('url')}}">{{setting('name')}}</a> محفوظ است
+{{--        <strong> تمامی حقوق مادی و معنوی برای وبسایت <a href="{{setting('url')}}">{{setting('name')}}</a> محفوظ است--}}
         </strong>
     </footer>
 
